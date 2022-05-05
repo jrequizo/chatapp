@@ -1,0 +1,21 @@
+[submodule "frontend-service"]
+	path = frontend-service
+	url = https://github.com/jrequizo/ca-ms-frontend.git
+[submodule "account-service"]
+	path = account-service
+	url = https://github.com/jrequizo/ca-ms-account.git
+[submodule "chat-service"]
+	path = chat-service
+	url = https://github.com/jrequizo/ca-ms-chat.git
+[submodule "friends-service"]
+	path = friends-service
+	url = https://github.com/jrequizo/ca-ms-friends.git
+[submodule "notifications-service"]
+	path = notifications-service
+	url = https://github.com/jrequizo/ca-ms-notifications.git
+[submodule "user-search-service"]
+	path = user-search-service
+	url = https://github.com/jrequizo/ca-ms-user-search.git
+[submodule "profile-service"]
+	path = profile-service
+	url = https://github.com/jrequizo/ca-ms-profile.git
