@@ -32,6 +32,61 @@ paths:
             type: file
         401:
           description: Unauthenticated. Please login.
+
+  /static/js/{jsFile}:
+    get:
+      summary: React static content serving
+      operationId: static-js
+      parameters:
+        - in: path
+          name: jsFile
+          type: string
+          required: true 
+      x-google-backend:
+        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        200:
+          description: Success.
+          schema:
+            type: file
+
+  /static/css/{cssFile}:
+    get:
+      summary: React static content serving
+      operationId: static-css
+      parameters:
+        - in: path
+          name: cssFile
+          type: string
+          required: true 
+      x-google-backend:
+        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        200:
+          description: Success.
+          schema:
+            type: file
+
+  /static/media/{mediaFile}:
+    get:
+      summary: React static content serving
+      operationId: static-media
+      parameters:
+        - in: path
+          name: mediaFile
+          type: string
+          required: true 
+      x-google-backend:
+        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        200:
+          description: Success.
+          schema:
+            type: file
+
   /login:
     post:
       summary: Send an authentication request to login the specified user using the provided email and password.
@@ -64,7 +119,7 @@ paths:
               jwt:
                 type: string
         401:
-          description: The provided username was not found.
+          description: The provided email was not found.
         403:
           description: The password provided was incorrect.
         default:
