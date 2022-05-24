@@ -164,3 +164,35 @@ paths:
           description: The provided username/email is in use.
         default:
           description: Unexpected error.
+
+  /{wildcard}:
+    get:
+      summary: 404 page
+      operationId: not-found-get
+      parameters:
+        - in: path
+          name: wildcard
+          type: string
+          required: true 
+      x-google-backend:
+        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/not-found
+      responses:
+        404:
+          description: Page not found.
+          schema:
+            type: file
+    post:
+      summary: Method not allowed
+      operationId: not-found-post
+      parameters:
+        - in: path
+          name: wildcard
+          type: string
+          required: true 
+      x-google-backend:
+        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/method-not-allowed
+      responses:
+        405:
+          description: Method not allowed.
+          schema:
+            type: file
