@@ -8,85 +8,6 @@ host: chatapp-api-019pqv3h707k8.apigateway.chatapp-development-349608.cloud.goog
 schemes:
     - https
 paths:
-  /:
-    get:
-      summary: Login page
-      operationId: home
-      x-google-backend:
-        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/
-      responses:
-        200:
-          description: Success.
-          schema:
-            type: file
-  /chat:
-    get:
-      summary: Chat page
-      operationId: chat
-      x-google-backend:
-        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/chat
-      responses:
-        200:
-          description: Success.
-          schema:
-            type: file
-        401:
-          description: Unauthenticated. Please login.
-
-  /static/js/{jsFile}:
-    get:
-      summary: React static content serving
-      operationId: static-js
-      parameters:
-        - in: path
-          name: jsFile
-          type: string
-          required: true 
-      x-google-backend:
-        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/
-        path_translation: APPEND_PATH_TO_ADDRESS
-      responses:
-        200:
-          description: Success.
-          schema:
-            type: file
-
-  /static/css/{cssFile}:
-    get:
-      summary: React static content serving
-      operationId: static-css
-      parameters:
-        - in: path
-          name: cssFile
-          type: string
-          required: true 
-      x-google-backend:
-        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/
-        path_translation: APPEND_PATH_TO_ADDRESS
-      responses:
-        200:
-          description: Success.
-          schema:
-            type: file
-
-  /static/media/{mediaFile}:
-    get:
-      summary: React static content serving
-      operationId: static-media
-      parameters:
-        - in: path
-          name: mediaFile
-          type: string
-          required: true 
-      x-google-backend:
-        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/
-        path_translation: APPEND_PATH_TO_ADDRESS
-      responses:
-        200:
-          description: Success.
-          schema:
-            type: file
-
   /login:
     post:
       summary: Send an authentication request to login the specified user using the provided email and password.
@@ -127,7 +48,7 @@ paths:
   /register:
     post:
       summary: Creates a new user account with the provided username, email, and and password.
-      operationId: register
+      operationId: register-post
       x-google-backend:
         address: https://account-dot-chatapp-development-349608.ts.r.appspot.com/register
       consumes:
@@ -164,35 +85,3 @@ paths:
           description: The provided username/email is in use.
         default:
           description: Unexpected error.
-
-  /{wildcard}:
-    get:
-      summary: 404 page
-      operationId: not-found-get
-      parameters:
-        - in: path
-          name: wildcard
-          type: string
-          required: true 
-      x-google-backend:
-        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/not-found
-      responses:
-        404:
-          description: Page not found.
-          schema:
-            type: file
-    post:
-      summary: Method not allowed
-      operationId: not-found-post
-      parameters:
-        - in: path
-          name: wildcard
-          type: string
-          required: true 
-      x-google-backend:
-        address: https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/method-not-allowed
-      responses:
-        405:
-          description: Method not allowed.
-          schema:
-            type: file

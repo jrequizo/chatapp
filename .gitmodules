@@ -4,6 +4,9 @@
 [submodule "account-service"]
 	path = account-service
 	url = https://github.com/jrequizo/ca-ms-account.git
+[submodule "auth-service"]
+	path = auth-service
+	url = https://github.com/jrequizo/ca-ms-auth.git
 [submodule "chat-service"]
 	path = chat-service
 	url = https://github.com/jrequizo/ca-ms-chat.git
