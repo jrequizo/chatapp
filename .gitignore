@@ -1,4 +1,4 @@
 # Dependency directories
-node_modules/
-config/*
+node_modules
+config
 packages/*/node_modules
