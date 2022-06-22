@@ -1,10 +1,17 @@
-microservicechatapp.com
+Welcome to the ChatApp Micro-service Tech Exploration Project!
 
-API Gateway URL: 	https://chatapp-api-gateway-dm86wbmj.ts.gateway.dev
+The purpose of this project is to explore web technologies and refine our development process in lead-up to developing an MVP for Mera Technology.
 
+This project requires the following to enable it to run:
+Dependencies
+	- Nodejs14 or higher
+	- Google Cloud CLI
+	- Google PubSub Emulator
 
-Services URLs:
+ Application Credentials
+	- Firebase SDK Admin Service Account Access Token
+	- Firebase SDK Token
 
-frontend: 			https://frontend-dot-chatapp-development-349608.ts.r.appspot.com/
-
-account:			https://account-dot-chatapp-development-349608.ts.r.appspot.com/
+URLs
+Front-end Service: microservicechatapp.com
+API Service: api.microservicechatapp.com
