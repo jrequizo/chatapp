@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    background:linear-gradient(to right,#30ce5a, #249a44);
+    color: white;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1em;
+    padding: 0 2em;
+    height: 3.7em;
+}
+
+.navbar-chatbox-text {
+    font-size: 1.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.1em;
+}
+
+.navbarLogo {
+    width: 3em;
+    height: 3em;
+}
+
+.navbar a {
+    display: flex;
+    color: inherit;
+    height: 100%;
+    text-decoration: none;
+    align-items: center;
+    margin-left: 0.3em;
+    margin-right: 0.4em;
+    padding: 0.2em;
+    transition: all 0.4s linear;
+}
+
+.navbar a:hover {
+    transform: scale(1.05);
+}
+
+.navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 1em;
+    list-style: none;
+}
+
+.navbar li.active {
+    background: #555;
+}
+
+.navbar li:hover {
+    background-color: rgb(96, 96, 96);
+}

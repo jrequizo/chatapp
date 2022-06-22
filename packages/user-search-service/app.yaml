@@ -1,0 +1,4 @@
+runtime: nodejs14
+service: user-search
+automatic_scaling:
+  max_instances: 3

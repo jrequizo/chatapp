@@ -1,0 +1,32 @@
+{
+	"name": "packages",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"start": "npm-run-all -p start-pubsub setup",
+		"setup": "npm-run-all -s setup-pubsub start:services",
+		"start:emulator": "npm-run-all -p start-pubsub setup-pubsub",
+		"start:services": "npm-run-all -p s:account s:auth s:chat s:friends s:notif s:profile s:search ws:chat client",
+		"start-pubsub": "set GOOGLE_CLOUD_PROJECT=\"emulator\" && set PUBSUB_PROJECT_ID=\"emulator\" && gcloud beta emulators pubsub start --project=\"emulator\"",
+		"setup-pubsub": "set GOOGLE_CLOUD_PROJECT=\"emulator\" && set PUBSUB_PROJECT_ID=\"emulator\" && node ./utils/setup_pubsub.js",
+		"s:account": "cd ./packages/account-service && npm run start:dev",
+		"s:auth": "cd ./packages/auth-service && npm run start:dev",
+		"s:chat": "cd ./packages/chat-service && npm run start:dev",
+		"s:friends": "cd ./packages/friends-service && npm run start:dev",
+		"s:notif": "cd ./packages/notifications-service && npm run start:dev",
+		"s:profile": "cd ./packages/profile-service && npm run start:dev",
+		"s:search": "cd ./packages/user-search-service && npm run start:dev",
+		"ws:chat": "cd ./packages/chat-websocket && npm run start:dev",
+		"client": "cd ./packages/frontend-service && npm run start:dev"
+	},
+	"workspaces": [
+		"packages/*"
+	],
+	"devDependencies": {
+		"@google-cloud/pubsub": "^3.0.1",
+		"npm-run-all": "^4.1.5"
+	}
+}

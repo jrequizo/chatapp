@@ -1,0 +1,54 @@
+{
+  "name": "account-service",
+  "version": "1.0.0",
+  "description": "Account microservice for the ChatApp",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon src/index.ts",
+    "gcp-build": "tsc -p .",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrequizo/ca-ms-account.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrequizo/ca-ms-account/issues"
+  },
+  "homepage": "https://github.com/jrequizo/ca-ms-account#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/firebase": "^3.2.1",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^17.0.33",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0",
+    "tsconfig-paths": "^4.0.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@google-cloud/pubsub": "^3.0.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase": "^9.7.0",
+    "firebase-admin": "^10.2.0",
+    "multer": "^1.4.5-lts.1",
+    "password-validator": "^5.3.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "node -r tsconfig-paths/register -r ts-node/register ./src/index.ts --trace-warnings",
+    "ext": "ts, js"
+  }
+}
