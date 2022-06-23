@@ -6,6 +6,7 @@ The purpose of this project is to explore web technologies and refine our develo
 
 This project requires the following to enable it to run:
 
+
 ---
 #### Dependencies
 - Nodejs14 or higher
