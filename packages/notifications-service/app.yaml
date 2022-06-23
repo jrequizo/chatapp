@@ -1,4 +1,0 @@
-runtime: nodejs14
-service: notifications
-automatic_scaling:
-  max_instances: 3

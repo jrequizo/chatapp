@@ -1,4 +1,0 @@
-runtime: nodejs14
-service: friends
-automatic_scaling:
-  max_instances: 3
