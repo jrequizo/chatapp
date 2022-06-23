@@ -20,7 +20,7 @@
 		"s:profile": "cd ./packages/profile-service && nodemon",
 		"s:search": "cd ./packages/user-search-service && nodemon",
 		"ws:chat": "cd ./packages/chat-websocket && nodemon",
-		"start:client": "cd ./packages/frontend-service && nodemon"
+		"start:client": "cd ./packages/frontend-service && npm run start:dev"
 	},
 	"workspaces": [
 		"packages/*"
