@@ -7,8 +7,9 @@
 	"private": true,
 	"scripts": {
 		"start": "npm-run-all -p start-pubsub setup",
-		"setup": "npm-run-all -s setup-pubsub start:services start:client",
+		"setup": "npm-run-all -s setup-pubsub start:app",
 		"start:emulator": "npm-run-all -p start-pubsub setup-pubsub",
+		"start:app": "npm-run-all -p start:services start:client",
 		"start:services": "npm-run-all -p s:account s:auth s:chat s:friends s:notif s:profile s:search ws:chat",
 		"start-pubsub": "set GOOGLE_CLOUD_PROJECT=\"emulator\" && set PUBSUB_PROJECT_ID=\"emulator\" && gcloud beta emulators pubsub start --project=\"emulator\"",
 		"setup-pubsub": "set GOOGLE_CLOUD_PROJECT=\"emulator\" && set PUBSUB_PROJECT_ID=\"emulator\" && node ./utils/setup_pubsub.js",
