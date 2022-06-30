@@ -1,4 +1,4 @@
 # Dependency directories
+.unused
 node_modules
-config
-packages/*/node_modules
+package-lock.json

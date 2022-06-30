@@ -4,10 +4,10 @@ const pubSubClient = new PubSub({projectId: "emulator"})
 
 async function setupProfileCreateTopic() {
 	try {
-		const [tProfileCreate] = await pubSubClient.createTopic('profile-create')
-		const [tProfileCreateSubscription] = await tProfileCreate.createSubscription('profile-create-subscription')
+		await pubSubClient.createTopic('profile-create')
+		const tProfileCreate = pubSubClient.topic('profile-create')
+		await tProfileCreate.createSubscription('profile-create-subscription')
 	} catch (error) {
-		console.log(error)
 	}
 }
 
