@@ -1,5 +1,6 @@
 {
   "name": "root",
+  "type": "module",
   "private": true,
 	"scripts": {
 		"start": "env-cmd --file ./.env npm-run-all -s start-scripts",
