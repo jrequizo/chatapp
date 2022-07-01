@@ -5,15 +5,19 @@ info:
     version: 1.0.1
     
 host: chatapp-api-019pqv3h707k8.apigateway.chatapp-development-349608.cloud.goog
+x-google-endpoints:
+- name: chatapp-api-019pqv3h707k8.apigateway.chatapp-development-349608.cloud.goog
+  allowCors: True
 schemes:
     - https
 paths:
-  /login:
+  /auth/login:
     post:
       summary: Send an authentication request to login the specified user using the provided email and password.
       operationId: login
       x-google-backend:
-        address: https://account-dot-chatapp-development-349608.ts.r.appspot.com/login
+        address: https://auth-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
       consumes:
       - application/json
       parameters:
@@ -45,12 +49,23 @@ paths:
           description: The password provided was incorrect.
         default:
           description: Unexpected error.
-  /register:
+    options:
+      operationId: login-options
+      x-google-backend:
+        address: https://auth-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        200:
+          description: Success.
+        401:
+          description: "CORS not allowed"
+  /account/register:
     post:
       summary: Creates a new user account with the provided username, email, and and password.
       operationId: register-post
       x-google-backend:
-        address: https://account-dot-chatapp-development-349608.ts.r.appspot.com/register
+        address: https://account-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
       consumes:
       - application/json
       parameters:
@@ -85,3 +100,134 @@ paths:
           description: The provided username/email is in use.
         default:
           description: Unexpected error.
+    options:
+      operationId: register-options
+      x-google-backend:
+        address: https://account-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        200:
+          description: Success.
+        401:
+          description: "CORS not allowed"
+  /chat/{chatId}:
+    get:
+      summary: Retrieves the chat messages from the specified public chat.
+      operationId: chat-history-get
+      parameters:
+        - in: path
+          name: chatId
+          type: string
+          required: true 
+      x-google-backend:
+        address: https://chat-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        200:
+          description: Success.
+          schema:
+            type: object
+            properties:
+              jwt:
+                type: string
+        404:
+          description: The provided chat id could not be found.
+        default:
+          description: Unexpected error.
+    options:
+      operationId: chat-history-options
+      parameters:
+        - in: path
+          name: chatId
+          type: string
+          required: true 
+      x-google-backend:
+        address: https://chat-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        200:
+          description: Success.
+        401:
+          description: "CORS not allowed"
+  /profile/details:
+    get:
+      summary: Retrieve the profile details of the current user.
+      operationId: profile-details-get
+      x-google-backend:
+        address: https://profile-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+        disable_auth: True
+      responses:
+        200:
+          description: Success.
+          schema:
+            type: object
+            properties:
+              about:
+                type: string
+              pfp_url:
+                type: string
+              uid:
+                type: string
+              username:
+                type: string
+        401:
+          description: The provided jwt is invalid
+        default:
+          description: Unexpected error.
+    options:
+      operationId: profile-details-options
+      x-google-backend:
+        address: https://profile-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+        disable_auth: True
+      responses:
+        200:
+          description: Success.
+        401:
+          description: "CORS not allowed"
+  /profile/u/{profileId}:
+    get:
+      summary: Retrieve the profile details of the current user.
+      operationId: profile-user-get
+      parameters:
+        - in: path
+          name: profileId
+          type: string
+          required: true 
+      x-google-backend:
+        address: https://profile-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        200:
+          description: Success.
+          schema:
+            type: object
+            properties:
+              about:
+                type: string
+              pfp_url:
+                type: string
+              uid:
+                type: string
+              username:
+                type: string
+        401:
+          description: The provided jwt is invalid
+        default:
+          description: Unexpected error.
+    options:
+      operationId: profile-user-options
+      parameters:
+        - in: path
+          name: profileId
+          type: string
+          required: true 
+      x-google-backend:
+        address: https://profile-dot-chatapp-development-349608.ts.r.appspot.com/
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        200:
+          description: Success.
+        401:
+          description: "CORS not allowed"
