@@ -31,9 +31,9 @@ a. Run `install-packages.sh`
 
 ## To run the application using a development build:
 
-# Option A:
+**Option A**
 Use `npm run start` (or `npm run start:client` + `npm run start:services`) in a console of your choice (e.g. VSCode console).
 
-# Option B:
+**Option B**
 Run `run-app.sh` (or `run-client.sh` + `run-services.sh`).
 
