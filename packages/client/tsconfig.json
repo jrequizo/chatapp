@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "rootDir": "./src",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": [
+        "./*",
+        // TODO: identify better solution for module resolution in this? https://webpack.js.org/concepts/module-resolution/#module-paths
+        "../node_modules/chatapp-api/src/*" // Resolve modules in the mono-repo API import
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "@types/*": [
+        "./types/*"
+      ]
+    },
+  },
+  "include": [
+    "src"
+  ]
+}

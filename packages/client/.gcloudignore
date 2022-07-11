@@ -1,0 +1,13 @@
+.vscode/
+node_modules/
+src/
+public/
+
+README.md
+tsconfig.json
+
+.git
+.gitignore
+.gcloudignore
+
+.env.development
