@@ -1,0 +1,117 @@
+{
+	"definitions": {
+		"trpcRequestDef": {
+			"type": "object",
+			"required": [
+				"batch"
+			],
+			"properties": {
+				"batch": {
+					"type": "integer",
+					"minimum": "1",
+					"maximum": "1",
+					"default": "1"
+				},
+			}
+		},
+		"trpcResponseDef": {
+			"type": "array",
+			"items": {
+				"type": "object"
+				"required": [
+					"id",
+					"result"
+				],
+				"properties": {
+					"id": {
+						"type": "null",
+					},
+					"result": {
+						"type": "object"
+						"required": [
+							"data"
+						],
+						"data": {
+							"type": "object",
+							"properties": {
+							}
+						}
+					}
+				}
+			}
+		},
+		"trpcErrorResponseDef": {
+			"type": "array",
+			"items": {
+				"required": [
+					"id",
+					"error"
+				],
+				"properties": {
+					"id": {
+						"type": "null",
+					},
+					"error": {
+						"type": "object"
+						"required": [
+							"message",
+							"code",
+							"data"
+						],
+						"properties": {
+							"message": {
+								"type": "string"
+							},
+							"code": {
+								"type": "integer"
+							},
+							"data": {
+								"type": "object",
+								"required": [
+									"code",
+									"httpStatus",
+									"stack",
+									"path"
+								],
+								"properties": {
+									"code": {
+										"type": "string"
+									},
+									"httpStatus": {
+										"type": "integer"
+									},
+									"stack": {
+										"type": "string"
+									},
+									"path": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"getDetailsDef": {
+			"allof": [
+				{
+					"$ref": "#/definitions/trpcRequestDef"
+				},
+				{
+					"input": {
+						"type": "object",
+						"properties": {
+							"0": {
+								"type": "object"
+								"properties": {
+									// TODO: add properties
+								}
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+}

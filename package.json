@@ -1,31 +1,29 @@
 {
-  "name": "root",
-  "type": "module",
-  "private": true,
+	"name": "root",
+	"private": true,
 	"scripts": {
-		"start": "env-cmd --file ./.env npm-run-all -s start-scripts",
-		"start-scripts": "npm-run-all -p start-pubsub setup",
-		"setup": "npm-run-all -s setup-pubsub start:app",
-		"start:emulator": "npm-run-all -p start-pubsub setup-pubsub",
-		"start:app": "npm-run-all -p start:services start:client",
-		"start:services": "npm-run-all -p s:account s:auth s:chat s:friends s:notif s:profile s:search ws:chat",
-		"start-pubsub": "set GOOGLE_CLOUD_PROJECT=\"emulator\" && set PUBSUB_PROJECT_ID=\"emulator\" && gcloud beta emulators pubsub start --project=\"emulator\"",
-		"setup-pubsub": "set GOOGLE_CLOUD_PROJECT=\"emulator\" && set PUBSUB_PROJECT_ID=\"emulator\" && node ./utils/setup_pubsub.js",
-		"s:account": "cd ./packages/account-service && npm run start:dev",
-		"s:auth": "cd ./packages/auth-service && npm run start:dev",
-		"s:chat": "cd ./packages/chat-service && npm run start:dev",
-		"s:friends": "cd ./packages/friends-service && npm run start:dev",
-		"s:notif": "cd ./packages/notifications-service && npm run start:dev",
-		"s:profile": "cd ./packages/profile-service && npm run start:dev",
-		"s:search": "cd ./packages/user-search-service && npm run start:dev",
-		"ws:chat": "cd ./packages/chat-websocket && npm run start:dev",
-		"start:client": "cd ./packages/frontend-service && npm run start:dev"
+		"start": "npm-run-all -p start:services start:client",
+		"start:services": "env-cmd --file ./.env npm-run-all -p start:api start:chat-socket",
+		"start:api": "cd ./packages/api && npm run start:dev",
+		"start:chat-socket": "cd ./packages/chat-socket && npm run start:dev",
+		"start:client": "env-cmd --file ./.env npm run client",
+		"client": "cd ./packages/client && npm run start"
 	},
-  "devDependencies": {
-    "@google-cloud/pubsub": "^3.0.1",
-    "env-cmd": "^10.1.0",
-    "lerna": "^5.1.6",
-    "npm-run-all": "^4.1.5",
-    "nx": "^14.3.6"
-  }
+	"devDependencies": {
+		"@google-cloud/pubsub": "^3.0.1",
+		"autoprefixer": "^10.4.7",
+		"env-cmd": "^10.1.0",
+		"lerna": "^5.1.6",
+		"npm-run-all": "^4.1.5",
+		"nx": "^14.3.6"
+	},
+	"dependencies": {
+		"chatapp-api": "file:packages/api",
+		"deasync": "^0.1.27",
+		"firebase": "^9.9.0",
+		"firebase-admin": "^11.0.0",
+		"phosphor-react": "^1.4.1",
+		"react-router-dom": "^6.3.0",
+		"socket.io-client": "^4.5.1"
+	}
 }

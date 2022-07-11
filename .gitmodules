@@ -1,27 +1,9 @@
-[submodule "frontend-service"]
-	path = packages/frontend-service
-	url = https://github.com/jrequizo/ca-ms-frontend.git
-[submodule "account-service"]
-	path = packages/account-service
-	url = https://github.com/jrequizo/ca-ms-account.git
-[submodule "auth-service"]
-	path = packages/auth-service
-	url = https://github.com/jrequizo/ca-ms-auth.git
-[submodule "chat-service"]
-	path = packages/chat-service
-	url = https://github.com/jrequizo/ca-ms-chat.git
-[submodule "chat-websocket"]
-	path = packages/chat-websocket
-	url = https://github.com/jrequizo/ca-ws-chat.git
-[submodule "friends-service"]
-	path = packages/friends-service
-	url = https://github.com/jrequizo/ca-ms-friends.git
-[submodule "notifications-service"]
-	path = packages/notifications-service
-	url = https://github.com/jrequizo/ca-ms-notifications.git
-[submodule "user-search-service"]
-	path = packages/user-search-service
-	url = https://github.com/jrequizo/ca-ms-user-search.git
-[submodule "profile-service"]
-	path = packages/profile-service
-	url = https://github.com/jrequizo/ca-ms-profile.git
+[submodule "api"]
+	path = packages/api
+	url = https://github.com/jrequizo/chatapp-api.git
+[submodule "client"]
+	path = packages/client
+	url = https://github.com/jrequizo/chatapp-client.git
+[submodule "chat-socket"]
+	path = packages/chat-socket
+	url = https://github.com/jrequizo/chatapp-chat-socket.git
