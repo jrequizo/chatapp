@@ -23,17 +23,21 @@ This project requires the following to enable it to run:
 3. Initialize the packages using either Option A or B
 
 **Option A**
+
 a. Run `npm i` in the root directory of the repository.
 b. Run `npm run install:packages` in the root directory of the repository.
 
 **Option B**
+
 a. Run `install-packages.sh`
 
 ## To run the application using a development build:
 
 **Option A**
+
 Use `npm run start` (or `npm run start:client` + `npm run start:services`) in a console of your choice (e.g. VSCode console).
 
 **Option B**
+
 Run `run-app.sh` (or `run-client.sh` + `run-services.sh`).
 
