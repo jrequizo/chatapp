@@ -1,4 +1,6 @@
 # Dependency directories
-.unused
-node_modules
+.unused/
+node_modules/
+utils/
+
 package-lock.json

@@ -7,7 +7,12 @@
 		"start:api": "cd ./packages/api && npm run start:dev",
 		"start:chat-socket": "cd ./packages/chat-socket && npm run start:dev",
 		"start:client": "env-cmd --file ./.env npm run client",
-		"client": "cd ./packages/client && npm run start"
+		"client": "cd ./packages/client && npm run start",
+		"install:root": "npm i -D -d",
+		"install:packages": "npm-run-all -s install:api install:client install:chat-socket",
+		"install:api": "cd ./packages/api && npm i -d",
+		"install:client": "cd ./packages/client && npm i i -d",
+		"install:chat-socket": "cd ./packages/chat-socket && npm i i -d"
 	},
 	"devDependencies": {
 		"@google-cloud/pubsub": "^3.0.1",
@@ -15,15 +20,7 @@
 		"env-cmd": "^10.1.0",
 		"lerna": "^5.1.6",
 		"npm-run-all": "^4.1.5",
-		"nx": "^14.3.6"
-	},
-	"dependencies": {
-		"chatapp-api": "file:packages/api",
 		"deasync": "^0.1.27",
-		"firebase": "^9.9.0",
-		"firebase-admin": "^11.0.0",
-		"phosphor-react": "^1.4.1",
-		"react-router-dom": "^6.3.0",
-		"socket.io-client": "^4.5.1"
+		"nx": "^14.3.6"
 	}
 }
