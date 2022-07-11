@@ -11,8 +11,8 @@
 		"install:root": "npm i -D -d",
 		"install:packages": "npm-run-all -s install:api install:client install:chat-socket",
 		"install:api": "cd ./packages/api && npm i -d",
-		"install:client": "cd ./packages/client && npm i i -d",
-		"install:chat-socket": "cd ./packages/chat-socket && npm i i -d"
+		"install:client": "cd ./packages/client && npm i -d",
+		"install:chat-socket": "cd ./packages/chat-socket && npm i -d"
 	},
 	"devDependencies": {
 		"@google-cloud/pubsub": "^3.0.1",
