@@ -43,4 +43,4 @@ Use `npm run start` (or `npm run start:client` + `npm run start:services`) in a 
 ### Option B
 
 Run `run-app.sh` (or `run-client.sh` + `run-services.sh`).
-
+- To close the process, use Ctrl+C
