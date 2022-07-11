@@ -25,6 +25,7 @@ This project requires the following to enable it to run:
 **Option A**
 
 a. Run `npm i` in the root directory of the repository.
+
 b. Run `npm run install:packages` in the root directory of the repository.
 
 **Option B**
