@@ -7,15 +7,15 @@ The purpose of this project is to explore web technologies and refine our develo
 This project requires the following to enable it to run:
 
 
-## Dependencies
+### Dependencies
 
 - [Nodejs14 or higher](https://nodejs.org/en/download/)
 - [gcloud CLI](https://cloud.google.com/sdk/docs/install)
 
 
-### Setup
+# Setup
 
-## To build the application:
+### To build the application:
 
 1. Install the above dependencies
 2. Authenticate on the gcloud CLI by running `gcloud auth login`.
@@ -31,7 +31,7 @@ b. Run `npm run install:packages` in the root directory of the repository.
 
 a. Run `install-packages.sh`
 
-## To run the application using a development build:
+### To run the application using a development build:
 
 **Option A**
 
