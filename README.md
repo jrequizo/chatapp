@@ -19,7 +19,7 @@ This project requires the following dependencies:
 
 1. Install the above dependencies
 2. Authenticate on the gcloud CLI by running `gcloud auth login`.
-3. Initialize the packages using either Option A or B
+3. Initialize the packages using either **Option A** or **Option B**
 
 **Option A**
 
@@ -31,7 +31,9 @@ b. Run `npm run install:packages` in the root directory of the repository.
 
 a. Run `install-packages.sh`
 
-### To run the application using a development build:
+# Running
+
+To run the application using a development build, use either **Option A** or **Option B**
 
 **Option A**
 
