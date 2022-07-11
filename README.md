@@ -11,6 +11,7 @@ The purpose of this project is to explore web technologies and refine our develo
 This project requires the following dependencies:
 - [Nodejs14 or higher](https://nodejs.org/en/download/)
 - [gcloud CLI](https://cloud.google.com/sdk/docs/install)
+- Your gmail account added as a Secret Accessor to the Google Cloud Project.
 
 
 # Setup
