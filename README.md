@@ -4,11 +4,11 @@ Welcome to the ChatApp Micro-service Tech Exploration Project!
 
 The purpose of this project is to explore web technologies and refine our development process in lead-up to developing an MVP for Mera Technology.
 
-This project requires the following to enable it to run:
 
 
-### Dependencies
+# Dependencies
 
+This project requires the following dependencies:
 - [Nodejs14 or higher](https://nodejs.org/en/download/)
 - [gcloud CLI](https://cloud.google.com/sdk/docs/install)
 
