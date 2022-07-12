@@ -11,7 +11,10 @@ The purpose of this project is to explore web technologies and refine our develo
 This project requires the following dependencies:
 - [Nodejs14 or higher](https://nodejs.org/en/download/)
 - [gcloud CLI](https://cloud.google.com/sdk/docs/install)
-- Your gmail account added as a Secret Accessor to the Google Cloud Project.
+- **Your GMail account granted the Secret Accessor permission on the Google Cloud Project.**
+
+### Contact me if you need your GMail added.
+Or you could make your own Google Cloud Project and modify the environment variables :)
 
 
 # Setup
@@ -43,4 +46,4 @@ Use `npm run start` (or `npm run start:client` + `npm run start:services`) in a 
 ### Option B
 
 Run `run-app.sh` (or `run-client.sh` + `run-services.sh`).
-
+- To close the process, use Ctrl+C
