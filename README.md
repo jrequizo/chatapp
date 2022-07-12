@@ -1,4 +1,4 @@
-# ChatApp (Micro-service)
+# ChatApp + micro-services
 
 Welcome to the ChatApp Micro-service Tech Exploration Project! 
 
@@ -46,3 +46,20 @@ To run the application using a development build, use either **Option A** or **O
 1. Run `run-app.sh` .
 	- Alternatively, run `run-client.sh` and `run-services.sh` .
 	- To close the process(es), use Ctrl+C. If you receive a `PORT ALREADY IN USE` error, consider checking if the Node JS process is still running using Task Manager or your OS equivalent.
+
+# Frameworks
+This application uses [ReactJS](https://reactjs.org/) for the frontend and Express with [tRPC](https://trpc.io/) for the backend. The socket service uses the [Socket.IO](https://socket.io/) websocket implementation. The backend applications make liberal use of [Zod](https://github.com/colinhacks/zod#introduction) for schema validation.
+
+All services use [Typescript](https://www.typescriptlang.org/).
+
+
+### **Links to the documentation for each service can be found here:**
+- [Typescript](https://www.typescriptlang.org/docs/)
+- [ReactJS](https://reactjs.org/docs/getting-started.html)
+- [tRPC](https://trpc.io/docs)
+	- The server layer uses `@trpc/server` while the client layer uses `@trpc/react` which is built on top of [react-query](https://tanstack.com/query/v4/docs/adapters/react-query)
+- [Zod](https://github.com/colinhacks/zod#basic-usage)
+- [Socket.IO](https://socket.io/docs/v4/)
+
+# Project Management
+The project roadmap and task tracking can be found on our [JIRA](https://requizo.atlassian.net/jira/software/projects/CHAT/boards/1) and [Confluence](https://requizo.atlassian.net/wiki/spaces/CHATAPP/overview?homepageId=164048).
