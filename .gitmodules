@@ -1,9 +1,0 @@
-[submodule "api"]
-	path = packages/api
-	url = https://github.com/jrequizo/chatapp-api.git
-[submodule "client"]
-	path = packages/client
-	url = https://github.com/jrequizo/chatapp-client.git
-[submodule "chat-socket"]
-	path = packages/chat-socket
-	url = https://github.com/jrequizo/chatapp-chat-socket.git
