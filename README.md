@@ -63,3 +63,11 @@ All services use [Typescript](https://www.typescriptlang.org/).
 
 # Project Management
 The project roadmap and task tracking can be found on our [JIRA](https://requizo.atlassian.net/jira/software/projects/CHAT/boards/1) and [Confluence](https://requizo.atlassian.net/wiki/spaces/CHATAPP/overview?homepageId=164048).
+
+
+
+# Extra Notes
+
+### Running on a local Docker container
+To run on a local Docker container, you have to provide your own GCP account key.
+When you run `gcloud auth application-default login`, the console will output `Credentials saved to file: [<file path>]`. Navigate to this file path and copy the `application_default_credentials.json` into the root directory of the service (e.g. `api/.` or `chat-socket/.` and re-name it to `key.json`.
