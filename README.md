@@ -19,6 +19,15 @@ Or you could make your own Google Cloud Project and modify the environment varia
 
 # Setup
 
+### Forking the repo & updating submodule remotes
+
+When you fork this monorepo, the submodules aren't automatically forked. **You will have to fork the submodules individually.**
+
+After forking the monorepo and its submodules , clone the monorepo using `git fork --recurse-submodule https://github.com/<your username here>/chatapp.git`. 
+
+This will clone the submodules as well, but the .gitsubmodules will still point to the original repos. You will have to manually edit the url in `.gitmodules` to point to your forks e.g. `url = https://github.com/<your username here>/chatapp-client.git`. After editing the path locations, you will need to sync the url's using `git submodule sync` and then committing/pushing the changes to your remote.
+
+
 ### To build the application:
 
 1. Install the above dependencies
