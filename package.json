@@ -3,9 +3,13 @@
 	"private": true,
 	"scripts": {
 		"start": "npm-run-all -p start:services start:client",
+		"start:linux": "npm-run-all -p start:services:linux start:client",
 		"start:services": "env-cmd --file ./.env npm-run-all -p start:api start:chat-socket",
+		"start:services:linux": "env-cmd --file ./.env npm-run-all -p start:api:linux start:chat-socket:linux",
 		"start:api": "cd ./packages/api && npm run start:dev",
+		"start:api:linux": "cd ./packages/api && npm run start:dev:linux",
 		"start:chat-socket": "cd ./packages/chat-socket && npm run start:dev",
+		"start:chat-socket:linux": "cd ./packages/chat-socket && npm run start:dev:linux",
 		"start:client": "env-cmd --file ./.env npm run client",
 		"client": "cd ./packages/client && npm run start",
 		"install:root": "npm i -D -d",
