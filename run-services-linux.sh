@@ -1,11 +1,11 @@
 #!/bin/bash 
 
 _term() { 
-  echo "Caught SIGTERM signal!"
+  echo "Caught SIGTERM signal!" 
   pkill -9 $$
 }
 
-npm run start
+npm run start:services:linux
 
 trap _term SIGINT
 trap _term EXIT

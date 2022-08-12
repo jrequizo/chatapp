@@ -5,7 +5,7 @@ _term() {
   pkill -9 $$
 }
 
-npm run start
+npm run start:linux
 
 trap _term SIGINT
 trap _term EXIT

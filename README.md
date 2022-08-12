@@ -45,6 +45,8 @@ This will clone the submodules as well, but the .gitsubmodules will still point 
 
 # Running
 
+## Windows 10/11
+
 To run the application using a development build, use either **Option A** or **Option B**
 
 ### Option A
@@ -55,6 +57,19 @@ To run the application using a development build, use either **Option A** or **O
 1. Run `run-app.sh` .
 	- Alternatively, run `run-client.sh` and `run-services.sh` .
 	- To close the process(es), use Ctrl+C. If you receive a `PORT ALREADY IN USE` error, consider checking if the Node JS process is still running using Task Manager or your OS equivalent.
+
+## Macos
+Navigate to the base folder of the repository. Within the repository you might have to make the `run-app-linux.sh`, `run-client-linux.sh`, and `run-services-linux.sh` executable.
+
+You can make it executable by typing in the command `chmod +x run-<service:name>-linux.sh`
+
+Once it's executable, launch the microservice chatapp `./run-<service:name>-linux.sh`
+
+You can close the process(es) using `Ctrl+C`
+
+## Linux
+
+Same steps as the Macos.
 
 # Frameworks
 This application uses [ReactJS](https://reactjs.org/) for the frontend and Express with [tRPC](https://trpc.io/) for the backend. The socket service uses the [Socket.IO](https://socket.io/) websocket implementation. The backend applications make liberal use of [Zod](https://github.com/colinhacks/zod#introduction) for schema validation.

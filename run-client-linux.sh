@@ -5,7 +5,7 @@ _term() {
   kill -9 $$
 }
 
-npm run start:client
+npm run start:client:linux
 
 trap _term SIGINT
 trap _term EXIT
